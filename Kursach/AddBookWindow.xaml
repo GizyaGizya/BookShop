@@ -1,0 +1,47 @@
+﻿<Window x:Class="Kursach.AddBookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Добавление книги" Height="450" Width="800">
+    <Grid x:Name="TB_reg_login" Background="#FFDCD27D">
+        <Label Content="Добавление книги" HorizontalAlignment="Left" Height="54" Margin="174,13,0,0" VerticalAlignment="Top" Width="440" FontSize="35" HorizontalContentAlignment="Center" Background="#FFD6D2D2"/>
+        <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Left" Height="27" Margin="27,365,0,30" VerticalAlignment="Center" Width="67" Background="#FFD76464" FontSize="15" Click="BackButton_Click"/>
+        <Label Content="Выберите категорию:" HorizontalAlignment="Left" Height="30" Margin="27,99,0,0" VerticalAlignment="Top" Width="177" FontSize="15"/>
+        <StackPanel>
+            <ComboBox x:Name="CategorySelectBox" Margin="27,134,590.667,254"/>
+        </StackPanel>
+        <Label Content="Выберите подкатегорию:" HorizontalAlignment="Left" Height="30" Margin="227,99,0,0" VerticalAlignment="Top" Width="198" FontSize="15"/>
+        <StackPanel>
+            <ComboBox x:Name="SubcategorySelectBox" Margin="227,134,390.667,254"/>
+        </StackPanel>
+        <Label Content="Выберите язык:" HorizontalAlignment="Left" Height="30" Margin="425,99,0,0" VerticalAlignment="Top" Width="122" FontSize="15"/>
+        <ComboBox x:Name="LanguageSelectBox" Margin="425,134,247.667,254">
+            <TextBlock x:Name="l1"><Run Text="Русский"/></TextBlock>
+            <TextBlock  x:Name="l2"><Run Text="Английский"/></TextBlock>
+            <TextBlock  x:Name="l3"><Run Text="Немецкий"/></TextBlock>
+            <TextBlock  x:Name="l4"><Run Text="Испанский"/></TextBlock>
+            <TextBlock  x:Name="l5"><Run Text="Китайский"/></TextBlock>
+        </ComboBox>
+        <Label Content="Выберите возрастной рейтинг:" HorizontalAlignment="Left" Height="30" Margin="552,99,0,0" VerticalAlignment="Top" Width="233" FontSize="15"/>
+        <ComboBox x:Name="AgeRatingSelectBox" Margin="602,134,84.667,254">
+            <TextBlock x:Name="a1"><Run Text="0+"/></TextBlock>
+            <TextBlock  x:Name="a2"><Run Text="12+"/></TextBlock>
+            <TextBlock  x:Name="a3"><Run Text="16+"/></TextBlock>
+            <TextBlock  x:Name="a4"><Run Text="18+"/></TextBlock>
+        </ComboBox>
+        <Label Content="Введите название:" HorizontalAlignment="Left" Height="30" Margin="27,194,0,0" VerticalAlignment="Top" Width="141" FontSize="15"/>
+        <Label Content="Введите автора:" HorizontalAlignment="Left" Height="30" Margin="227,194,0,0" VerticalAlignment="Top" Width="141" FontSize="15"/>
+        <Label Content="Введите описание:" HorizontalAlignment="Left" Height="30" Margin="386,194,0,0" VerticalAlignment="Top" Width="141" FontSize="15"/>
+        <Label Content="Введите путь к обложке:" HorizontalAlignment="Left" Height="30" Margin="565,194,0,0" VerticalAlignment="Top" Width="190" FontSize="15"/>
+        <TextBox x:Name="NameBox" HorizontalAlignment="Left" Height="76" Margin="27,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <TextBox x:Name="AuthorBox" HorizontalAlignment="Left" Height="36" Margin="227,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141"/>
+        <TextBox x:Name="DescBox" HorizontalAlignment="Left" Height="137" Margin="386,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+        <TextBox x:Name="CoverBox" HorizontalAlignment="Left" Height="36" Margin="565,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <Button x:Name="AddButton" Content="Добавить" HorizontalAlignment="Left" Height="27" Margin="679,365,0,30" VerticalAlignment="Center" Width="87" Background="#FFD76464" FontSize="15" Click="AddButton_Click"/>
+    </Grid>
+</Window>
