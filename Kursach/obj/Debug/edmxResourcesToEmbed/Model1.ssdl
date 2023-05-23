@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BookShopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="_User">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id_cat" />
+    </Key>
+    <Property Name="Id_cat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_subcat" Type="int" />
+    <Property Name="Name_cat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Goods">
+    <Key>
+      <PropertyRef Name="Id_good" />
+    </Key>
+    <Property Name="Id_good" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_cat" Type="int" />
+    <Property Name="Id_subcat" Type="int" />
+    <Property Name="Count_good" Type="int" />
+    <Property Name="Price_good" Type="money" />
+    <Property Name="Name_good" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Author_good" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Language_good" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Age_rating" Type="nvarchar" MaxLength="3" />
+    <Property Name="Sh_desc" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="Order_points">
+    <Key>
+      <PropertyRef Name="Id_point" />
+    </Key>
+    <Property Name="Id_point" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_good" Type="int" />
+    <Property Name="Id_order" Type="int" />
+    <Property Name="Count_point" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id_order" />
+    </Key>
+    <Property Name="Id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_user" Type="int" />
+    <Property Name="Date_order" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id_role" />
+    </Key>
+    <Property Name="Id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_role" Type="nvarchar" MaxLength="13" />
+  </EntityType>
+  <EntityType Name="Subcategory">
+    <Key>
+      <PropertyRef Name="Id_subcat" />
+    </Key>
+    <Property Name="Id_subcat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_subcat" Type="nvarchar" MaxLength="70" />
+  </EntityType>
+  <EntityType Name="User_roles">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_role" Type="int" />
+  </EntityType>
+  <EntityContainer Name="Хранилище BookShopModelContainer">
+    <EntitySet Name="_User" EntityType="Self._User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Goods" EntityType="Self.Goods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_points" EntityType="Self.Order_points" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Subcategory" EntityType="Self.Subcategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_roles" EntityType="Self.User_roles" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

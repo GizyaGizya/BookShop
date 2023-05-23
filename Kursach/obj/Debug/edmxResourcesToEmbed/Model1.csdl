@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookShopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C_User">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id_cat" />
+    </Key>
+    <Property Name="Id_cat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_subcat" Type="Int32" />
+    <Property Name="Name_cat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="Id_good" />
+    </Key>
+    <Property Name="Id_good" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_cat" Type="Int32" />
+    <Property Name="Id_subcat" Type="Int32" />
+    <Property Name="Count_good" Type="Int32" />
+    <Property Name="Price_good" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Name_good" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Author_good" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Language_good" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Age_rating" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="Sh_desc" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order_points">
+    <Key>
+      <PropertyRef Name="Id_point" />
+    </Key>
+    <Property Name="Id_point" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_good" Type="Int32" />
+    <Property Name="Id_order" Type="Int32" />
+    <Property Name="Count_point" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id_order" />
+    </Key>
+    <Property Name="Id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_user" Type="Int32" />
+    <Property Name="Date_order" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id_role" />
+    </Key>
+    <Property Name="Id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_role" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Subcategory">
+    <Key>
+      <PropertyRef Name="Id_subcat" />
+    </Key>
+    <Property Name="Id_subcat" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_subcat" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_roles">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_role" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BookShopEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C_User" EntityType="Self.C_User" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Goods" EntityType="Self.Good" />
+    <EntitySet Name="Order_points" EntityType="Self.Order_points" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Subcategories" EntityType="Self.Subcategory" />
+    <EntitySet Name="User_roles" EntityType="Self.User_roles" />
+  </EntityContainer>
+</Schema>

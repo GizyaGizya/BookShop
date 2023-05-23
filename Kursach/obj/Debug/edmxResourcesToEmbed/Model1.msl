@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BookShopModelContainer" CdmEntityContainer="BookShopEntities">
+    <EntitySetMapping Name="C_User">
+      <EntityTypeMapping TypeName="BookShopModel.C_User">
+        <MappingFragment StoreEntitySet="_User">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="BookShopModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Id_cat" ColumnName="Id_cat" />
+          <ScalarProperty Name="Id_subcat" ColumnName="Id_subcat" />
+          <ScalarProperty Name="Name_cat" ColumnName="Name_cat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="BookShopModel.Good">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="Id_good" ColumnName="Id_good" />
+          <ScalarProperty Name="Id_cat" ColumnName="Id_cat" />
+          <ScalarProperty Name="Id_subcat" ColumnName="Id_subcat" />
+          <ScalarProperty Name="Count_good" ColumnName="Count_good" />
+          <ScalarProperty Name="Price_good" ColumnName="Price_good" />
+          <ScalarProperty Name="Name_good" ColumnName="Name_good" />
+          <ScalarProperty Name="Author_good" ColumnName="Author_good" />
+          <ScalarProperty Name="Language_good" ColumnName="Language_good" />
+          <ScalarProperty Name="Age_rating" ColumnName="Age_rating" />
+          <ScalarProperty Name="Sh_desc" ColumnName="Sh_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_points">
+      <EntityTypeMapping TypeName="BookShopModel.Order_points">
+        <MappingFragment StoreEntitySet="Order_points">
+          <ScalarProperty Name="Id_point" ColumnName="Id_point" />
+          <ScalarProperty Name="Id_good" ColumnName="Id_good" />
+          <ScalarProperty Name="Id_order" ColumnName="Id_order" />
+          <ScalarProperty Name="Count_point" ColumnName="Count_point" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="BookShopModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id_order" ColumnName="Id_order" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="Date_order" ColumnName="Date_order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="BookShopModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id_role" ColumnName="Id_role" />
+          <ScalarProperty Name="Name_role" ColumnName="Name_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subcategories">
+      <EntityTypeMapping TypeName="BookShopModel.Subcategory">
+        <MappingFragment StoreEntitySet="Subcategory">
+          <ScalarProperty Name="Id_subcat" ColumnName="Id_subcat" />
+          <ScalarProperty Name="Name_subcat" ColumnName="Name_subcat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_roles">
+      <EntityTypeMapping TypeName="BookShopModel.User_roles">
+        <MappingFragment StoreEntitySet="User_roles">
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+          <ScalarProperty Name="Id_role" ColumnName="Id_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
