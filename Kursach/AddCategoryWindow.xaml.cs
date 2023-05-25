@@ -53,7 +53,7 @@ namespace Kursach
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
             //Если поле заполнено
-            if (ChangeBox.Text != "")
+            if (ChangeBox.Text != "" && ChangeBox.Text.Length < 50)
             {
                 //Добавляем категорию
                 AddCategory();
